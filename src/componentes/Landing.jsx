@@ -15,12 +15,8 @@ function Landing() {
     <>
       <main>
         <section className="p-3 bg-slate-900 flex items-center justify-center sm:justify-start sm:pl-10 md:pl-16 lg:pl-32 ">
-          <div
-            style={{ fontFamily: "Orbitron, sans-serif" }}
-            className="text-white text-3xl font-extrabold tracking-tight select-none cursor-default"
-          >
-            Volt
-          </div>
+   
+          <img src="/volt.png" className="w-32" alt="Volt Energia" />
         </section>
         <section
           className="relative group bg-gradient-to-r from-primary via-purple-900 to-pink-800 animate-gradient-x pt-10 lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
@@ -81,12 +77,10 @@ function Landing() {
             </div>
           </div>
           <div className="bg-white/20 w-3/4 p-5 py-7 rounded-md border-2 border-white/80 flex justify-around flex-wrap flex-col sm:flex-row gap-5">
-            <h2
-              className="w-full lg:w-fit text-center text-5xl font-extrabold hover:drop-shadow-[0_0_10px_white] hover:cursor-default transition duration-300 text-white"
-              style={{ fontFamily: "Orbitron, sans-serif" }}
-            >
-              VOLT
-            </h2>
+   
+            <div className="w-full lg:w-fit flex justify-center items-center">
+            <img src="/volt.png" className="w-32" alt="Volt Energia" />
+            </div>
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-white/70 text-xs uppercase font-medium">
                 permanencia

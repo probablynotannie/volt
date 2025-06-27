@@ -5,12 +5,8 @@ function Footer() {
     <footer className="bg-gray-900 text-gray-300 py-8">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         <div>
-          <h3
-            style={{ fontFamily: "Orbitron, sans-serif" }}
-            className="text-lg font-semibold text-white"
-          >
-            Volt
-          </h3>
+        <img src="/volt.png" className="w-16" alt="Volt Energia" />
+
           <p className="text-sm mt-2">
             Impulsando el futuro con soluciones energéticas limpias e
             inteligentes.
