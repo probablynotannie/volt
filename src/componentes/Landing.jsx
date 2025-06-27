@@ -14,7 +14,7 @@ function Landing() {
   return (
     <>
       <main>
-        <section className="p-3 bg-slate-900 flex items-center pl-32 ">
+        <section className="p-3 bg-slate-900 flex items-center justify-center sm:justify-start sm:pl-10 md:pl-16 lg:pl-32 ">
           <div
             style={{ fontFamily: "Orbitron, sans-serif" }}
             className="text-white text-3xl font-extrabold tracking-tight select-none cursor-default"
