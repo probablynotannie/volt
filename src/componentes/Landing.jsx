@@ -23,7 +23,7 @@ function Landing() {
           </div>
         </section>
         <section
-          className="relative group bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
+          className="relative group bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
             setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -50,12 +50,12 @@ function Landing() {
             />
           )}
 
-          <div className="w-3/4 flex cursor-default">
+          <div className="w-3/4 lg:flex cursor-default">
             <div className="flex justify-start text-start flex-col space-y-3">
               <span className="text-slate-300">
                 ¿Y si te dijéramos que pagas más luz de la que deberías?
               </span>
-              <h1 className="text-6xl text-white font-bold">
+              <h1 className="text-4xl lg:text-6xl text-white font-bold">
                 Compara. Ahorra. Revisa cada año. Así de simple.
               </h1>
 
@@ -67,7 +67,7 @@ function Landing() {
                 permanencias, y con una revisión anual incluida.
               </p>
             </div>
-            <div className="flex justify-end items-center w-full">
+            <div className="flex justify-center lg:justify-end items-center w-full mt-10 lg:m-0">
               <div
                 className="relative w-64 h-64 rounded-full bg-primary/20 flex items-center justify-center
                        group cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300  transform"
@@ -80,13 +80,13 @@ function Landing() {
               </div>
             </div>
           </div>
-          <div className="bg-white/20 w-3/4 p-5 py-7 rounded-md border-2 border-white/80 grid grid-cols-4 lg:grid-cols-5">
+          <div className="bg-white/20 w-3/4 p-5 py-7 rounded-md border-2 border-white/80 flex justify-around flex-wrap gap-5">
             <h2
-              className="text-5xl font-extrabold hover:drop-shadow-[0_0_10px_white] hover:cursor-default transition duration-300 text-white"
+              className="w-full lg:w-fit text-center text-5xl font-extrabold hover:drop-shadow-[0_0_10px_white] hover:cursor-default transition duration-300 text-white"
               style={{ fontFamily: "Orbitron, sans-serif" }}
             >
               VOLT
-            </h2> 
+            </h2>
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-white/70 text-xs uppercase font-medium">
                 permanencia
@@ -111,7 +111,7 @@ function Landing() {
                 0€
               </p>
             </div>
-            <button className="col-span-4 lg:col-span-1 bg-white/30 hover:bg-white/40 transition duration-300 p-3 w-full text-white rounded-lg font-extrabold">
+            <button className="bg-white/30 hover:bg-white/40 transition duration-300 w-full lg:w-[200px] p-3 text-white rounded-lg font-extrabold">
               Conocemos
             </button>
           </div>
