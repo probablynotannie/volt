@@ -23,7 +23,7 @@ function Landing() {
           </div>
         </section>
         <section
-          className="relative group bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
+          className="relative group bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x pt-10 lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
             setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -80,7 +80,7 @@ function Landing() {
               </div>
             </div>
           </div>
-          <div className="bg-white/20 w-3/4 p-5 py-7 rounded-md border-2 border-white/80 flex justify-around flex-wrap gap-5">
+          <div className="bg-white/20 w-3/4 p-5 py-7 rounded-md border-2 border-white/80 flex justify-around flex-wrap flex-col sm:flex-row gap-5">
             <h2
               className="w-full lg:w-fit text-center text-5xl font-extrabold hover:drop-shadow-[0_0_10px_white] hover:cursor-default transition duration-300 text-white"
               style={{ fontFamily: "Orbitron, sans-serif" }}
