@@ -86,7 +86,7 @@ function Landing() {
               style={{ fontFamily: "Orbitron, sans-serif" }}
             >
               VOLT
-            </h2>
+            </h2> 
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-white/70 text-xs uppercase font-medium">
                 permanencia
