@@ -48,7 +48,7 @@ function Landing() {
 
           <div className="w-3/4 lg:flex cursor-default">
             <div className="flex justify-start text-start flex-col space-y-3">
-              <span className="text-slate-300">
+              <span className="text-slate-200">
                 ¿Y si te dijéramos que pagas más luz de la que deberías?
               </span>
               <h1 className="text-4xl lg:text-6xl text-white font-bold">
