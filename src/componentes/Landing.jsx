@@ -23,7 +23,7 @@ function Landing() {
           </div>
         </section>
         <section
-          className="relative group bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x pt-10 lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
+          className="relative group bg-gradient-to-r from-primary via-purple-900 to-pink-800 animate-gradient-x pt-10 lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
             setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
