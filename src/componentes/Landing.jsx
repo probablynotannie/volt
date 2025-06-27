@@ -1,47 +1,119 @@
+import { useState } from "react";
 import ComoFunciona from "./apartados/ComoFuncino";
 import Beneficios from "./apartados/Beneficios";
 import LlamadoAccion from "./apartados/LlamadoAccion";
 import Testimonios from "./apartados/Testimonios";
+import Descripcion from "./apartados/Descripcion";
+import "@fontsource/orbitron/800.css";
+import { FaLightbulb } from "react-icons/fa";
+
 function Landing() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <>
-      <main className="max-w-7xl mx-auto px-6 py-16">
-        <section className="text-center mb-20">
-          <h1 className="text-5xl font-extrabold text-primary mb-4">
-            Energía limpia para un futuro mejor
-          </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Ofrecemos soluciones innovadoras que permiten a empresas y
-            comunidades prosperar de forma sostenible.
-          </p>
-          <a
-            href="#soluciones"
-            className="inline-block mt-8 bg-primary hover:bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold transition"
+      <main>
+        <section className="p-3 bg-slate-900 flex items-center pl-32 ">
+          <div
+            style={{ fontFamily: "Orbitron, sans-serif" }}
+            className="text-white text-3xl font-extrabold tracking-tight select-none cursor-default"
           >
-            Ver Soluciones
-          </a>
+            Volt
+          </div>
         </section>
-        <section id="soluciones" className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white shadow-xl rounded-2xl p-6 border-t-4 border-primary hover:scale-105 transition-transform">
-            <h3 className="text-xl font-bold mb-2">Energía Solar</h3>
-            <p className="text-gray-600 text-sm">
-              Aprovecha la energía del sol con paneles solares de alta
-              eficiencia y soluciones de almacenamiento.
-            </p>
+        <section
+          className="relative group bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+          }}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: "url('/noise.png')",
+              backgroundRepeat: "repeat",
+              backgroundSize: "auto",
+              zIndex: 0,
+            }}
+          />
+          {isHovering && (
+            <div
+              className="pointer-events-none absolute w-80 h-80 rounded-full bg-white/20 blur-3xl opacity-50 transition-opacity duration-300"
+              style={{
+                top: mousePos.y - 160,
+                left: mousePos.x - 160,
+              }}
+            />
+          )}
+
+          <div className="w-3/4 flex cursor-default">
+            <div className="flex justify-start text-start flex-col space-y-3">
+              <span className="text-slate-300">
+                ¿Y si te dijéramos que pagas más luz de la que deberías?
+              </span>
+              <h1 className="text-6xl text-white font-bold">
+                Compara. Ahorra. Revisa cada año. Así de simple.
+              </h1>
+
+              <p className="text-white">
+                Ayudamos a empresas a ahorrar en su factura de la luz.
+                Analizamos su contrato actual, buscamos alternativas más
+                competitivas en el mercado y nos encargamos de gestionar el
+                cambio de compañía si es necesario. Todo con transparencia, sin
+                permanencias, y con una revisión anual incluida.
+              </p>
+            </div>
+            <div className="flex justify-end items-center w-full">
+              <div
+                className="relative w-64 h-64 rounded-full bg-primary/20 flex items-center justify-center
+                       group cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300  transform"
+              >
+                <span className="absolute w-40 h-40 rounded-full bg-orange-200 opacity-30 blur-xl animate-pulse"></span>
+                <FaLightbulb
+                  className="relative text-white/40 text-9xl group-hover:text-white/50 transform group-hover:scale-110 transition duration-300"
+                  aria-label="Lightbulb icon"
+                />
+              </div>
+            </div>
           </div>
-          <div className="bg-white shadow-xl rounded-2xl p-6 border-t-4 border-blue-500 hover:scale-105 transition-transform">
-            <h3 className="text-xl font-bold mb-2">Energía Eólica</h3>
-            <p className="text-gray-600 text-sm">
-              Genera electricidad con soluciones de turbinas eólicas escalables
-              y rentables.
-            </p>
-          </div>
-          <div className="bg-white shadow-xl rounded-2xl p-6 border-t-4 border-teal-500 hover:scale-105 transition-transform">
-            <h3 className="text-xl font-bold mb-2">Redes Inteligentes</h3>
-            <p className="text-gray-600 text-sm">
-              Moderniza tu infraestructura energética con redes inteligentes que
-              optimizan el consumo y reducen costos.
-            </p>
+          <div className="bg-white/20 w-3/4 p-5 py-7 rounded-md border-2 border-white/80 grid grid-cols-4 lg:grid-cols-5">
+            <h2
+              className="text-5xl font-extrabold hover:drop-shadow-[0_0_10px_white] hover:cursor-default transition duration-300 text-white"
+              style={{ fontFamily: "Orbitron, sans-serif" }}
+            >
+              VOLT
+            </h2>
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="text-white/70 text-xs uppercase font-medium">
+                permanencia
+              </h3>
+              <p className="text-white text-lg font-extrabold text-center">
+                0 meses
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="text-white/70 text-xs uppercase font-medium">
+                Cambio
+              </h3>
+              <p className="text-white text-lg font-extrabold text-center">
+                24/48 horas
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="text-white/70 text-xs uppercase font-medium">
+                revision
+              </h3>
+              <p className="text-white text-lg font-extrabold text-center">
+                0€
+              </p>
+            </div>
+            <button className="col-span-4 lg:col-span-1 bg-white/30 hover:bg-white/40 transition duration-300 p-3 w-full text-white rounded-lg font-extrabold">
+              Conocemos
+            </button>
           </div>
         </section>
       </main>

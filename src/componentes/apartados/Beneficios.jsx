@@ -4,14 +4,12 @@ export default function Beneficios() {
       titulo: "Asesoramiento personal",
       descripcion:
         "Te visitamos en tu negocio y te explicamos todo de forma sencilla.",
-      imagen:
-        "https://images.unsplash.com/photo-1612831661761-7e56c4dc8282?auto=format&fit=crop&w=600&q=80",
+      imagen: "/negocio.jpeg",
     },
     {
       titulo: "Sin coste para ti",
       descripcion: "Nuestro servicio es gratuito y sin compromiso.",
-      imagen:
-        "https://images.unsplash.com/photo-1573164574396-9d3bf07a0ad7?auto=format&fit=crop&w=600&q=80",
+      imagen: "/cliente.webp",
     },
     {
       titulo: "Ahorro garantizado",

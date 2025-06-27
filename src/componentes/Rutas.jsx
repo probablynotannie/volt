@@ -6,7 +6,7 @@ import Landing from "./Landing";
 function Rutas() {
   return (
     <>
-      <Header />
+   {/*    <Header /> */}
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
