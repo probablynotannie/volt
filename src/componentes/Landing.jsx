@@ -67,7 +67,7 @@ function Landing() {
                 permanencias, y con una revisión anual incluida.
               </p>
             </div>
-            <div className="flex justify-center lg:justify-end items-center w-full mt-10 lg:m-0">
+            <div className="flex justify-center lg:justify-end items-center w-full mt-20 lg:m-0">
               <div
                 className="relative w-64 h-64 rounded-full bg-primary/20 flex items-center justify-center
                        group cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300  transform"
