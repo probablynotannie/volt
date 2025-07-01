@@ -3,6 +3,7 @@ import { FaInfo, FaCode, FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaXmark, FaFaceLaughBeam } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { MdEmail } from "react-icons/md";
 
 export default function Contacto() {
   const form = useRef();
@@ -59,15 +60,15 @@ export default function Contacto() {
   }, [modalOpen]);
 
   return (
-    <div className="hidden  md:flex justify-centers items-center flex-col">
+    <>
       <div className="relative inline-flex items-center justify-center group cursor-pointer">
         <span className="absolute w-16 h-16 rounded-full bg-purple-600 opacity-0 blur-xl scale-100 transition duration-300 group-hover:opacity-40 group-hover:scale-110"></span>
         <button
           type="button"
           onClick={() => setModalOpen(true)}
-          className="relative z-10 text-white bg-transparent border-none px-6 py-2 font-semibold transition duration-300"
+          className="relative z-10 bg-white/20 rounded-full text-white text-xl border-none  p-2 font-semibold transition duration-300"
         >
-          contacto
+          <MdEmail />
         </button>
       </div>
       {modalOpen && (
@@ -173,6 +174,6 @@ export default function Contacto() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

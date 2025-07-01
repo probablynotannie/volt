@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Contacto from "./Contacto";
+import { MdEmail } from "react-icons/md";
+import { FaInstagram } from "react-icons/fa";
 function Header() {
   return (
     <>
@@ -11,7 +13,23 @@ function Header() {
             alt="Volt Energia"
           />
         </Link>
-        <Contacto />
+        <div className="hidden md:flex gap-2 justify-center">
+          <Contacto />
+          <a
+            href="https://www.instagram.com/probablynotannie"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative inline-flex items-center justify-center group cursor-pointer"
+          >
+            <span className="absolute w-16 h-16 rounded-full bg-red-600 opacity-0 blur-xl scale-100 transition duration-300 group-hover:opacity-40 group-hover:scale-110"></span>
+            <button
+              type="button"
+              className="relative z-10 bg-white/20 rounded-full text-white text-xl border-none p-2 font-semibold transition duration-300"
+            >
+              <FaInstagram />
+            </button>
+          </a>
+        </div>
       </header>
     </>
   );
