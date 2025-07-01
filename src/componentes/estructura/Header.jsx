@@ -1,40 +1,19 @@
-import React from "react";
-
+import { Link } from "react-router-dom";
+import Contacto from "./Contacto";
 function Header() {
   return (
-    <header className="bg-gradient-to-r from-primary to-purple-700 text-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* <div className="text-2xl font-extrabold tracking-tight select-none cursor-default">
-          ⚡ Volt
-        </div> */}
-        <nav className="space-x-6 text-sm font-medium">
-          <a
-            href="/"
-            className="hover:underline hover:text-gray-300 transition"
-          >
-            Inicio
-          </a>
-          <a
-            href="#soluciones"
-            className="hover:underline hover:text-gray-300 transition"
-          >
-            Soluciones
-          </a>
-          <a
-            href="#nosotros"
-            className="hover:underline hover:text-gray-300 transition"
-          >
-            Nosotros
-          </a>
-          <a
-            href="#contacto"
-            className="hover:underline hover:text-gray-300 transition"
-          >
-            Contacto
-          </a>
-        </nav>
-      </div>
-    </header>
+    <>
+      <header className="p-3 bg-slate-900 flex flex-col sm:flex-row sm:items-center sm:justify-between sm:px-10 md:px-16 lg:px-32 gap-4 sm:gap-0">
+        <Link to={"/"}>
+          <img
+            src="/volt.png"
+            className="w-24 object-contain mx-auto sm:mx-0"
+            alt="Volt Energia"
+          />
+        </Link>
+        <Contacto />
+      </header>
+    </>
   );
 }
 

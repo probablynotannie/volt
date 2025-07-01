@@ -6,13 +6,13 @@ import Landing from "./Landing";
 function Rutas() {
   return (
     <>
-   {/*    <Header /> */}
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Landing />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 }
