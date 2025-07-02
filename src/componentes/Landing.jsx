@@ -105,7 +105,7 @@ function Landing() {
               onClick={() => setModalOpen(true)}
               className="bg-white/30 hover:bg-white/40 transition duration-300 w-full lg:w-[200px] p-3 text-white rounded-lg font-extrabold"
             >
-              contactanos
+              contáctanos
             </button>
           </div>
           <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />

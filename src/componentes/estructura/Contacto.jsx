@@ -1,7 +1,8 @@
 import { useRef, useState, useEffect } from "react";
-import { FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaTimes, FaPhone, FaEnvelope, FaUser } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { MdEmail } from "react-icons/md";
 
 export default function Contacto({ modalOpen, setModalOpen }) {
   const form = useRef();
@@ -78,38 +79,50 @@ export default function Contacto({ modalOpen, setModalOpen }) {
             </div>
             <div className="px-6 py-6">
               <form ref={form} onSubmit={sendEmail} className="space-y-5">
-                <div>
+                <div className="relative">
                   <label
                     htmlFor="user_name"
                     className="block text-sm font-medium text-gray-700"
                   >
                     Nombre
                   </label>
-                  <input
-                    id="user_name"
-                    name="user_name"
-                    type="text"
-                    required
-                    placeholder="Tu nombre"
-                    className="w-full mt-1 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
-                  />
+                  <div className="relative mt-1">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                      <FaUser />
+                    </span>
+                    <input
+                      id="user_name"
+                      name="user_name"
+                      type="text"
+                      required
+                      placeholder="Tu nombre"
+                      className="w-full pl-10 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
+                    />
+                  </div>
                 </div>
-                <div>
+
+                <div className="relative">
                   <label
                     htmlFor="user_email"
                     className="block text-sm font-medium text-gray-700"
                   >
                     Email
                   </label>
-                  <input
-                    id="user_email"
-                    name="user_email"
-                    type="email"
-                    required
-                    placeholder="tu@email.com"
-                    className="w-full mt-1 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
-                  />
+                  <div className="relative mt-1">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                      <MdEmail />
+                    </span>
+                    <input
+                      id="user_email"
+                      name="user_email"
+                      type="email"
+                      required
+                      placeholder="tu@email.com"
+                      className="w-full pl-10 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
+                    />
+                  </div>
                 </div>
+
                 <div>
                   <label
                     htmlFor="message"
@@ -145,7 +158,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
                 className="flex items-center gap-2 hover:text-purple-900"
               >
                 <FaPhone />
-                943 21 97 32
+               +34 631 69 45 40
               </a>
               <span className="text-gray-500 select-none">
                 © {new Date().getFullYear()} VOLT
