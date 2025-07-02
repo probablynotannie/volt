@@ -3,6 +3,7 @@ import ComoFunciona from "./apartados/ComoFuncino";
 import Beneficios from "./apartados/Beneficios";
 import LlamadoAccion from "./apartados/LlamadoAccion";
 import Testimonios from "./apartados/Testimonios";
+import Contacto from "./estructura/Contacto";
 import Descripcion from "./apartados/Descripcion";
 import "@fontsource/orbitron/800.css";
 import { FaLightbulb } from "react-icons/fa";
@@ -10,6 +11,7 @@ import { FaLightbulb } from "react-icons/fa";
 function Landing() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -99,10 +101,14 @@ function Landing() {
                 0€
               </p>
             </div>
-            <button className="bg-white/30 hover:bg-white/40 transition duration-300 w-full lg:w-[200px] p-3 text-white rounded-lg font-extrabold">
-              Conocemos
+            <button
+              onClick={() => setModalOpen(true)}
+              className="bg-white/30 hover:bg-white/40 transition duration-300 w-full lg:w-[200px] p-3 text-white rounded-lg font-extrabold"
+            >
+              contactanos
             </button>
           </div>
+          <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />
         </section>
       </main>
       <ComoFunciona />

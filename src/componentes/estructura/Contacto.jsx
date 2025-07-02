@@ -1,9 +1,7 @@
 import { useRef, useState, useEffect } from "react";
-import { FaInfo, FaCode, FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
-import { FaXmark, FaFaceLaughBeam } from "react-icons/fa6";
+import { FaTimes, FaPhone, FaEnvelope } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import { MdEmail } from "react-icons/md";
 
 export default function Contacto({ modalOpen, setModalOpen }) {
   const form = useRef();
@@ -41,7 +39,6 @@ export default function Contacto({ modalOpen, setModalOpen }) {
         }
       );
   };
-
   useEffect(() => {
     if (modalOpen) {
       const scrollbarWidth =
@@ -62,35 +59,29 @@ export default function Contacto({ modalOpen, setModalOpen }) {
     <>
       {modalOpen && (
         <div
-          id="default-modal"
-          tabIndex="-1"
-          aria-hidden="true"
-          className="fixed inset-0 z-50 flex justify-center items-center bg-black/50 p-4 px-10"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 py-6 sm:px-6 transition"
+          aria-modal="true"
+          role="dialog"
         >
-          <div className="bg-white rounded-lg shadow-md w-full max-w-lg overflow-hidden">
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <div className="flex items-center gap-2">
-                <FaEnvelope className="text-purple-600 text-xl" />
-                <h3 className="text-lg font-semibold text-gray-800">
-                  Contáctanos
-                </h3>
-              </div>
+          <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl animate-fadeInUp">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-800">
+                Contáctanos
+              </h3>
               <button
-                type="button"
-                className="text-gray-600 hover:text-gray-900 rounded p-1 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 onClick={() => setModalOpen(false)}
+                className="text-gray-400 hover:text-gray-600 transition focus:outline-none"
                 aria-label="Cerrar modal"
               >
                 <FaTimes className="text-xl" />
               </button>
             </div>
-
-            <div className="p-6 grid grid-cols-1 gap-6">
-              <form ref={form} onSubmit={sendEmail} className="space-y-4">
+            <div className="px-6 py-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-5">
                 <div>
                   <label
                     htmlFor="user_name"
-                    className="block mb-1 text-gray-700 font-medium"
+                    className="block text-sm font-medium text-gray-700"
                   >
                     Nombre
                   </label>
@@ -100,13 +91,13 @@ export default function Contacto({ modalOpen, setModalOpen }) {
                     type="text"
                     required
                     placeholder="Tu nombre"
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full mt-1 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="user_email"
-                    className="block mb-1 text-gray-700 font-medium"
+                    className="block text-sm font-medium text-gray-700"
                   >
                     Email
                   </label>
@@ -116,13 +107,13 @@ export default function Contacto({ modalOpen, setModalOpen }) {
                     type="email"
                     required
                     placeholder="tu@email.com"
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full mt-1 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="block mb-1 text-gray-700 font-medium"
+                    className="block text-sm font-medium text-gray-700"
                   >
                     Mensaje
                   </label>
@@ -132,31 +123,31 @@ export default function Contacto({ modalOpen, setModalOpen }) {
                     rows={4}
                     required
                     placeholder="Escribe tu mensaje..."
-                    className="w-full border border-gray-300 rounded px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full mt-1 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm resize-none focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`w-full bg-purple-600 text-white font-semibold rounded py-2 transition ${
+                  className={`w-full p-3 text-white text-sm font-semibold rounded-lg transition ${
                     loading
-                      ? "opacity-50 cursor-not-allowed"
-                      : "hover:bg-purple-700"
+                      ? "bg-purple-400 cursor-not-allowed"
+                      : "bg-purple-600 hover:bg-purple-700"
                   }`}
                 >
                   {loading ? "Enviando..." : "Enviar"}
                 </button>
               </form>
             </div>
-            <div className="p-4 border-t border-gray-200 flex justify-between items-center text-sm text-purple-700 font-semibold">
+            <div className="px-6 py-4 border-t border-gray-200 flex justify-between items-center text-sm text-purple-700 font-medium">
               <a
                 href="tel:943219732"
                 className="flex items-center gap-2 hover:text-purple-900"
               >
                 <FaPhone />
-                Llámanos (943 21 97 32)
+                943 21 97 32
               </a>
-              <span className="select-none">
+              <span className="text-gray-500 select-none">
                 © {new Date().getFullYear()} VOLT
               </span>
             </div>

@@ -30,9 +30,9 @@ export default function Beneficios() {
           {beneficios.map((b, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300"
+              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 group"
             >
-              <div className="relative group">
+              <div className="relative">
                 <img
                   src={b.imagen}
                   alt={b.titulo}
