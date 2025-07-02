@@ -3,7 +3,7 @@ export default function Testimonios() {
     {
       persona: "Marta G., Bar en Madrid",
       texto:
-        "Vinieron a mi bar, me explicaron todo con claridad y ahora ahorro más de 40€ al mes.",
+        "“Vinieron a mi bar, me explicaron todo con claridad y ahora ahorro más de 40€ al mes.”",
     },
     {
       persona: "– Marta G., Bar en Madrid",
@@ -24,11 +24,9 @@ export default function Testimonios() {
         <div className="grid md:grid-cols-2 gap-8 text-left">
           {clientes.map((cliente, index) => (
             <div key={index} className="bg-white p-6 rounded-xl shadow">
-              <p className="text-gray-700 italic">
-                “Vinieron a mi bar, me explicaron todo con claridad y ahora
-                ahorro más de 40€ al mes.”
-              </p>
+              <p className="text-gray-700 italic">{cliente.texto}</p>
               <p className="mt-4 text-sm font-semibold text-primary"></p>
+              <h4 className="font-bold text-primary">{cliente.persona}</h4>
             </div>
           ))}
         </div>

@@ -1,40 +1,43 @@
 export default function ComoFunciona() {
+  const steps = [
+    {
+      title: "1. Visita personalizada",
+      description: "Un experto analiza tu situación energética y recopila tu factura.",
+    },
+    {
+      title: "2. Comparamos tarifas",
+      description: "Buscamos la mejor oferta entre compañías confiables.",
+    },
+    {
+      title: "3. Empiezas a ahorrar",
+      description: "Nos encargamos de todo el papeleo. Tú solo disfrutas del ahorro.",
+    },
+  ];
+
   return (
-    <section className="bg-gray-50 py-16" id="como-funciona">
+    <section className="bg-white py-20" id="como-funciona">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-primary mb-4">
+        <h2 className="text-4xl font-bold text-primary mb-6">
           ¿Cómo funciona?
         </h2>
-        <p className="text-gray-600 mb-12">
-          Un asesor visita tu negocio, revisa tu tarifa actual y te propone una
-          mejor opción sin compromiso.
+        <p className="text-gray-600 max-w-xl mx-auto text-base mb-12">
+          Con nuestro proceso simple y transparente, cambiar a una tarifa mejor es rápido y sin complicaciones.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 text-left">
-          <div>
-            <h3 className="text-xl font-semibold mb-2 text-primary">
-              1. Visita personalizada
-            </h3>
-            <p className="text-sm text-gray-700">
-              Un experto analiza tu situación energética y recopila tu factura.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2 text-primary">
-              2. Comparamos tarifas
-            </h3>
-            <p className="text-sm text-gray-700">
-              Buscamos la mejor oferta entre compañías confiables.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2 text-primary">
-              3. Empiezas a ahorrar
-            </h3>
-            <p className="text-sm text-gray-700">
-              Nos encargamos de todo el papeleo. Tú empiezas a pagar menos.
-            </p>
-          </div>
+        <div className="grid md:grid-cols-3 gap-10 text-left">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="bg-white p-6"
+            >
+              <h3 className="text-xl font-semibold text-primary mb-3">
+                {step.title}
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

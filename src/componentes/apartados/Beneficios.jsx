@@ -25,22 +25,30 @@ export default function Beneficios() {
         <h2 className="text-4xl font-bold text-primary text-center mb-12">
           Beneficios de elegirnos
         </h2>
+
         <div className="grid md:grid-cols-3 gap-10">
           {beneficios.map((b, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300"
             >
-              <img
-                src={b.imagen}
-                alt={b.titulo}
-                className="h-48 w-full object-cover"
-              />
+              <div className="relative group">
+                <img
+                  src={b.imagen}
+                  alt={b.titulo}
+                  loading="lazy"
+                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-300" />
+              </div>
+
               <div className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-2">
+                <h3 className="text-xl font-semibold text-primary mb-2">
                   {b.titulo}
                 </h3>
-                <p className="text-gray-700 text-sm">{b.descripcion}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  {b.descripcion}
+                </p>
               </div>
             </div>
           ))}

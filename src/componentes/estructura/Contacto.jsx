@@ -5,10 +5,9 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { MdEmail } from "react-icons/md";
 
-export default function Contacto() {
+export default function Contacto({ modalOpen, setModalOpen }) {
   const form = useRef();
   const [loading, setLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -61,16 +60,6 @@ export default function Contacto() {
 
   return (
     <>
-      <div className="relative inline-flex items-center justify-center group cursor-pointer">
-        <span className="absolute w-16 h-16 rounded-full bg-purple-600 opacity-0 blur-xl scale-100 transition duration-300 group-hover:opacity-40 group-hover:scale-110"></span>
-        <button
-          type="button"
-          onClick={() => setModalOpen(true)}
-          className="relative z-10 bg-white/20 rounded-full text-white text-xl border-none  p-2 font-semibold transition duration-300"
-        >
-          <MdEmail />
-        </button>
-      </div>
       {modalOpen && (
         <div
           id="default-modal"

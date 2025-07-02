@@ -42,7 +42,7 @@ function Landing() {
             />
           )}
 
-          <div className="w-3/4 lg:flex cursor-default">
+          <div className="w-3/4  lg:flex  cursor-default">
             <div className="flex justify-start text-start flex-col space-y-3">
               <span className="text-slate-200">
                 ¿Y si te dijéramos que pagas más luz de la que deberías?
@@ -50,7 +50,6 @@ function Landing() {
               <h1 className="text-4xl lg:text-6xl text-white font-bold">
                 Compara. Ahorra. Revisa cada año. Así de simple.
               </h1>
-
               <p className="text-white">
                 Ayudamos a empresas a ahorrar en su factura de la luz.
                 Analizamos su contrato actual, buscamos alternativas más
@@ -59,7 +58,7 @@ function Landing() {
                 permanencias, y con una revisión anual incluida.
               </p>
             </div>
-            <div className="flex justify-center lg:justify-end items-center w-full mt-20 lg:m-0">
+            <div className="hidden lg:flex justify-center lg:justify-end items-center w-full mt-20 lg:m-0">
               <div
                 className="relative w-64 h-64 rounded-full bg-primary/20 flex items-center justify-center
                        group cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300  transform"
