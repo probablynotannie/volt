@@ -7,7 +7,7 @@ import Contacto from "./estructura/Contacto";
 import Descripcion from "./apartados/Descripcion";
 import "@fontsource/orbitron/800.css";
 import { FaLightbulb } from "react-icons/fa";
-
+import Grafica from "./grafica/PrecioLuz";
 function Landing() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -112,6 +112,7 @@ function Landing() {
         </section>
       </main>
       <ComoFunciona />
+      <Grafica />
       <Beneficios />
       <Testimonios />
       <LlamadoAccion />
