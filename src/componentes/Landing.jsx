@@ -4,10 +4,9 @@ import Beneficios from "./apartados/Beneficios";
 import LlamadoAccion from "./apartados/LlamadoAccion";
 import Testimonios from "./apartados/Testimonios";
 import Contacto from "./estructura/Contacto";
-import Descripcion from "./apartados/Descripcion";
 import "@fontsource/orbitron/800.css";
 import { FaLightbulb } from "react-icons/fa";
-import Grafica from "./grafica/PrecioLuz";
+import Grafica from "./grafica/Grafica";
 function Landing() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
