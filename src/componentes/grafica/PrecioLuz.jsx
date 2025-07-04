@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   LineChart,
   Line,
@@ -8,49 +8,27 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-const fetchPrecioLuzMock = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve([
-        { mes: "Ene", precio: 20.28 },
-        { mes: "Feb", precio: 13.67 },
-        { mes: "Mar", precio: 20.28 },
-        { mes: "Abr", precio: 13.67 },
-        { mes: "May", precio: 32.27 },
-        { mes: "Jun", precio: 32.27 },
-        { mes: "Jul", precio: 32.27 },
-        { mes: "Ago", precio: 32.27 },
-        { mes: "Sep", precio: 32.27 },
-        { mes: "Oct", precio: 32.27 },
-        { mes: "Nov", precio: 104.43 },
-        { mes: "Dic", precio: 111.23 },
-      ]);
-    }, 500);
-  });
-};
 
-export default function GraficaPrecioLuzMock() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+const data = [
+  { mes: "Ene", precio: 20.28 },
+  { mes: "Feb", precio: 13.67 },
+  { mes: "Mar", precio: 20.28 },
+  { mes: "Abr", precio: 13.67 },
+  { mes: "May", precio: 32.27 },
+  { mes: "Jun", precio: 32.27 },
+  { mes: "Jul", precio: 32.27 },
+  { mes: "Ago", precio: 32.27 },
+  { mes: "Sep", precio: 32.27 },
+  { mes: "Oct", precio: 32.27 },
+  { mes: "Nov", precio: 104.43 },
+  { mes: "Dic", precio: 111.23 },
+];
 
-  useEffect(() => {
-    fetchPrecioLuzMock().then((res) => {
-      setData(res);
-      setLoading(false);
-    });
-  }, []);
-
-  if (loading)
-    return (
-      <div className="flex justify-center items-center h-64">
-        <p className="text-gray-500">Cargando datos...</p>
-      </div>
-    );
-
+export default function Grafica() {
   return (
     <div className="max-w-4xl mx-auto p-4 bg-white shadow rounded">
       <h2 className="text-xl font-semibold mb-4 text-center">
-        Precio medio de la luz en España - 2024 (€/MWh)
+        Precio medio de la luz 2024 (€/MWh)
       </h2>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart
@@ -66,8 +44,6 @@ export default function GraficaPrecioLuzMock() {
             dataKey="precio"
             stroke="#3b82f6"
             strokeWidth={3}
-            dot={{ r: 5 }}
-            activeDot={{ r: 7 }}
           />
         </LineChart>
       </ResponsiveContainer>
