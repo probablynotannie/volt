@@ -10,65 +10,20 @@ import {
 import { useEffect, useState } from "react";
 
 export default function Grafica() {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/precioLuz")
-      .then((res) => res.json())
-      .then((json) => {
-        if (json.error) {
-          setError(json.error);
-          return;
-        }
-        // Aquí transformamos los datos para el gráfico:
-        // La estructura que devuelve la API es compleja, te doy un ejemplo:
-        // Vamos a mapear los datos horarios o diarios a formato { mes: "Ene", precio: valor }
-
-        // Supongamos que json.indicator.values es un array con { datetime, value }
-        const valores = json.indicator.values;
-
-        // Agrupar por mes (ejemplo simplificado)
-        const meses = [
-          "Ene",
-          "Feb",
-          "Mar",
-          "Abr",
-          "May",
-          "Jun",
-          "Jul",
-          "Ago",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dic",
-        ];
-
-        // Sumamos precio por mes y calculamos promedio
-        const preciosPorMes = Array(12).fill(0);
-        const countsPorMes = Array(12).fill(0);
-
-        valores.forEach(({ datetime, value }) => {
-          const fecha = new Date(datetime);
-          const mes = fecha.getMonth(); // 0 - 11
-          preciosPorMes[mes] += value;
-          countsPorMes[mes]++;
-        });
-
-        const dataGrafica = preciosPorMes.map((total, i) => ({
-          mes: meses[i],
-          precio: countsPorMes[i] ? +(total / countsPorMes[i]).toFixed(2) : 0,
-        }));
-
-        setData(dataGrafica);
-      })
-      .catch(() => {
-        setError("Error al cargar los datos");
-      });
-  }, []);
-
-  if (error) return <p className="text-red-600 text-center">{error}</p>;
-  if (!data) return <p className="text-center">Cargando datos...</p>;
+  const data = [
+    { mes: "Ene", precio: 20.28 },
+    { mes: "Feb", precio: 13.67 },
+    { mes: "Mar", precio: 20.28 },
+    { mes: "Abr", precio: 13.67 },
+    { mes: "May", precio: 32.27 },
+    { mes: "Jun", precio: 32.27 },
+    { mes: "Jul", precio: 32.27 },
+    { mes: "Ago", precio: 32.27 },
+    { mes: "Sep", precio: 32.27 },
+    { mes: "Oct", precio: 32.27 },
+    { mes: "Nov", precio: 104.43 },
+    { mes: "Dic", precio: 111.23 },
+  ];
 
   return (
     <div className="max-w-4xl mx-auto p-4 bg-white shadow rounded">
