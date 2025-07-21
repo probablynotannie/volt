@@ -89,7 +89,7 @@ function Landing() {
                 Cambio
               </h3>
               <p className="text-white text-lg font-extrabold text-center">
-                24/48 horas
+                24/48h
               </p>
             </div>
             <div className="flex flex-col items-center justify-center">
