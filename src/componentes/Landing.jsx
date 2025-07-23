@@ -7,6 +7,7 @@ import Contacto from "./estructura/Contacto";
 import "@fontsource/orbitron/800.css";
 import { FaLightbulb } from "react-icons/fa";
 import Grafica from "./grafica/Grafica";
+import Empresas from "./apartados/Empresas";
 function Landing() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -14,7 +15,7 @@ function Landing() {
 
   return (
     <>
-      <main>
+      <main className="relative">
         <section
           className="relative group bg-gradient-to-r from-primary via-purple-900 to-pink-800 animate-gradient-x pt-10 lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
           onMouseMove={(e) => {
@@ -42,7 +43,6 @@ function Landing() {
               }}
             />
           )}
-
           <div className="w-3/4  lg:flex  cursor-default">
             <div className="flex justify-start text-start flex-col space-y-3">
               <span className="text-slate-200">
@@ -113,6 +113,7 @@ function Landing() {
       <ComoFunciona />
       <Grafica />
       <Beneficios />
+      <Empresas />
       <Testimonios />
       <LlamadoAccion />
     </>

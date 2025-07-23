@@ -51,7 +51,7 @@ export default function Grafica() {
             stroke="#10b981"
             strokeWidth={2}
             strokeDasharray="5 5"
-            name="Precio con descuento"
+            name="Precio con Volt"
           />
         </LineChart>
       </ResponsiveContainer>

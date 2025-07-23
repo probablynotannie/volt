@@ -11,7 +11,6 @@ export default function Contacto({ modalOpen, setModalOpen }) {
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
-
     emailjs
       .sendForm("service_aulxgod", "template_2vydtus", form.current, {
         publicKey: "_U3DyehQC12K6Hti7",
@@ -64,7 +63,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
           aria-modal="true"
           role="dialog"
         >
-          <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl animate-fadeInUp">
+          <div className="bg-white w-full max-w-lg rounded-lg shadow-2xl animate-fadeInUp">
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
               <h3 className="text-lg font-semibold text-gray-800">
                 Contáctanos
