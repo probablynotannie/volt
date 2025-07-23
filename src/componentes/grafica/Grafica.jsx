@@ -29,6 +29,7 @@ export default function Grafica() {
       <h2 className="text-xl font-semibold mb-4 text-center">
         Precio medio de la luz 2024 (€/MWh)
       </h2>
+   
       <ResponsiveContainer width="100%" height={300}>
         <LineChart
           data={data}

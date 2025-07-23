@@ -112,10 +112,11 @@ function Landing() {
         </section>
       </main>
       <ComoFunciona />
+      <Beneficios /> 
       <Grafica />
-      <Beneficios />
-      <Empresas />
+     
       <Testimonios />
+      <Empresas />
       <LlamadoAccion />
     </>
   );
