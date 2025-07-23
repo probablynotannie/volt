@@ -3,13 +3,10 @@ import Contacto from "./Contacto";
 import { MdEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 import { useState } from "react";
-
 function Header() {
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => setMenuOpen((prev) => !prev);
-
   return (
     <header className="relative">
       <nav className="bg-slate-900 flex justify-between w-full sm:px-10 md:px-16 lg:px-32 gap-4 sm:gap-0 p-2 px-5 relative z-50">
@@ -108,7 +105,6 @@ function Header() {
               </div>
               <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />
             </li>
-
             <li>
               <a
                 href="https://www.instagram.com/probablynotannie"

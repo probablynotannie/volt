@@ -7,6 +7,7 @@ import Contacto from "./estructura/Contacto";
 import "@fontsource/orbitron/800.css";
 import { FaLightbulb } from "react-icons/fa";
 import Grafica from "./grafica/Grafica";
+import { motion } from "framer-motion";
 import Empresas from "./apartados/Empresas";
 function Landing() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -66,7 +67,7 @@ function Landing() {
               >
                 <span className="absolute w-40 h-40 rounded-full bg-orange-200 opacity-30 blur-xl animate-pulse"></span>
                 <FaLightbulb
-                  className="relative text-white/40 text-9xl group-hover:text-white/50 transform group-hover:scale-110 transition duration-300"
+                  className="relative text-white/20 text-9xl group-hover:text-white/30 transform group-hover:scale-110 transition duration-300"
                   aria-label="Lightbulb icon"
                 />
               </div>
