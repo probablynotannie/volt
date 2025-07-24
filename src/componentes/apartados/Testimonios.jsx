@@ -41,7 +41,7 @@ export default function Testimonios() {
     const scroll = () => {
       if (!slider) return;
 
-      scrollPosition.current += 0.3; // más bajo = más lento
+      scrollPosition.current += 0.8; 
       if (scrollPosition.current >= slider.scrollWidth / 2) {
         scrollPosition.current = 0;
       }
