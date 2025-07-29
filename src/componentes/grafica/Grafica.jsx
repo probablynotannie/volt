@@ -25,37 +25,39 @@ export default function Grafica() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-4 my-10 bg-white shadow rounded">
+    <div className="mx-auto p-4 my-10 bg-white shadow rounded">
       <h2 className="text-xl font-semibold mb-4 text-center">
         Precio medio de la luz 2024 (€/MWh)
       </h2>
-   
-      <ResponsiveContainer width="100%" height={300}>
-        <LineChart
-          data={data}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="mes" />
-          <YAxis />
-          <Tooltip formatter={(value) => `${value} €/MWh`} />
-          <Line
-            type="monotone"
-            dataKey="precio"
-            stroke="#3b82f6"
-            strokeWidth={3}
-            name="Precio normal"
-          />
-          <Line
-            type="monotone"
-            dataKey="precioDescuento"
-            stroke="#10b981"
-            strokeWidth={2}
-            strokeDasharray="5 5"
-            name="Precio con Volt"
-          />
-        </LineChart>
-      </ResponsiveContainer>
+
+      <div className="min-w-[40vw]">
+        <ResponsiveContainer width="100%" height={300}>
+          <LineChart
+            data={data}
+            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="mes" />
+            <YAxis />
+            <Tooltip formatter={(value) => `${value} €/MWh`} />
+            <Line
+              type="monotone"
+              dataKey="precio"
+              stroke="#3b82f6"
+              strokeWidth={3}
+              name="Precio normal"
+            />
+            <Line
+              type="monotone"
+              dataKey="precioDescuento"
+              stroke="#10b981"
+              strokeWidth={2}
+              strokeDasharray="5 5"
+              name="Precio con Volt"
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }

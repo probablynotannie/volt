@@ -134,7 +134,6 @@ function Landing() {
       <ComoFunciona />
       <Beneficios />
       <Grafica />
-
       <Testimonios />
       <Empresas />
       <LlamadoAccion />
