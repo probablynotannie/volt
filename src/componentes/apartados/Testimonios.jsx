@@ -41,7 +41,7 @@ export default function Testimonios() {
     const scroll = () => {
       if (!slider) return;
 
-      scrollPosition.current += 0.8; 
+      scrollPosition.current += 0.8;
       if (scrollPosition.current >= slider.scrollWidth / 2) {
         scrollPosition.current = 0;
       }
@@ -66,7 +66,11 @@ export default function Testimonios() {
           cada mes gracias a nuestras soluciones energéticas personalizadas.
         </p>
 
-        <div className="flex gap-6 w-full overflow-x-hidden" ref={sliderRef}>
+        <div
+          aria-label="Testimonios de clientes satisfechos"
+          className="flex gap-6 w-full overflow-x-hidden"
+          ref={sliderRef}
+        >
           {[...clientes, ...clientes].map((cliente, index) => (
             <div
               key={index}

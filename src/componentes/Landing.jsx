@@ -7,7 +7,7 @@ import Contacto from "./estructura/Contacto";
 import "@fontsource/orbitron/800.css";
 import { FaLightbulb } from "react-icons/fa";
 import Grafica from "./grafica/Grafica";
-import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import Empresas from "./apartados/Empresas";
 function Landing() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -16,6 +16,26 @@ function Landing() {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Ahorra en tu factura de la luz | Compara y cambia fácilmente
+        </title>
+        <meta
+          name="description"
+          content="Ayudamos a empresas a ahorrar en su factura de la luz comparando contratos, buscando mejores ofertas y gestionando el cambio de compañía sin permanencias."
+        />
+        <meta
+          property="og:title"
+          content="Ahorra en tu factura de la luz | Compara y cambia fácilmente"
+        />
+        <meta
+          property="og:description"
+          content="Ayudamos a empresas a ahorrar en su factura de la luz comparando contratos, buscando mejores ofertas y gestionando el cambio de compañía sin permanencias."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tu-sitio.com" />
+        <meta property="og:image" content="https://tu-sitio.com/preview.png" />
+      </Helmet>
       <main className="relative">
         <section
           className="relative group bg-gradient-to-r from-primary via-purple-900 to-pink-800 animate-gradient-x pt-10 lg:pt-28 pb-16 p-5 gap-20 flex justify-between flex-col items-center overflow-hidden"
@@ -112,9 +132,9 @@ function Landing() {
         </section>
       </main>
       <ComoFunciona />
-      <Beneficios /> 
+      <Beneficios />
       <Grafica />
-     
+
       <Testimonios />
       <Empresas />
       <LlamadoAccion />
