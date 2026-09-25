@@ -1,130 +1,60 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Contacto from "./Contacto";
-import { MdEmail } from "react-icons/md";
-import { FaInstagram } from "react-icons/fa";
-import { useState } from "react";
+
+const enlaces = [
+  ["Cómo funciona", "/#como-funciona"],
+  ["Beneficios", "/#beneficios"],
+  ["Qué revisamos", "/#que-revisamos"],
+  ["Preguntas frecuentes", "/#preguntas-frecuentes"],
+];
+
 function Header() {
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
   return (
-    <header className="relative">
-      <nav className="bg-slate-900 flex justify-between w-full sm:px-10 md:px-16 lg:px-32 gap-4 sm:gap-0 p-2 px-5 relative z-50">
-        <div className="w-full flex flex-wrap items-center justify-between">
-          <Link to={"/"}>
-            <img
-              src="/volt.png"
-              className="w-24 object-contain mx-auto sm:mx-0"
-              alt="Volt Energia"
-            />
+    <>
+      <a href="#main-content" className="sr-only z-[100] rounded bg-white p-3 text-slate-900 focus:not-sr-only focus:absolute focus:left-3 focus:top-3">
+        Saltar al contenido principal
+      </a>
+      <header className="relative">
+        <nav aria-label="Navegación principal" className="relative z-50 flex w-full items-center justify-between bg-slate-900 px-5 py-3 sm:px-10 lg:px-16">
+          <Link to="/" aria-label="Volt Energía, página de inicio" onClick={() => setMenuOpen(false)}>
+            <img src="/volt.png" className="w-24 object-contain" alt="Volt Energía" />
           </Link>
           <button
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-default"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white md:hidden"
+            aria-controls="menu-movil"
             aria-expanded={menuOpen}
-            onClick={toggleMenu}
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            <span className="sr-only">Menu</span>
-            <svg
-              className="w-5 h-5 text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
+            <svg className="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {menuOpen ? <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" /> : <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />}
             </svg>
           </button>
-          <div className="hidden md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex items-center flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <div className="relative inline-flex items-center justify-center group cursor-pointer">
-                  <span className="absolute w-16 h-16 rounded-full bg-purple-600 opacity-0 blur-xl scale-100 transition duration-300 group-hover:opacity-40 group-hover:scale-110"></span>
-                  <button
-                    type="button"
-                    onClick={() => setModalOpen(true)}
-                    className="relative z-10 bg-white/20 rounded-full text-white text-xl border-none  p-2 font-semibold transition duration-300"
-                  >
-                    <MdEmail />
-                  </button>
-                </div>
-                <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/probablynotannie"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative inline-flex items-center justify-center group cursor-pointer"
-                >
-                  <span className="absolute w-16 h-16 rounded-full bg-red-600 opacity-0 blur-xl scale-100 transition duration-300 group-hover:opacity-40 group-hover:scale-110"></span>
-                  <button
-                    type="button"
-                    className="relative z-10 bg-white/20 rounded-full text-white text-xl border-none p-2 font-semibold transition duration-300"
-                  >
-                    <FaInstagram />
-                  </button>
-                </a>
-              </li>
-            </ul>
+          <div className="hidden items-center gap-6 md:flex">
+            {enlaces.map(([texto, destino]) => <Link key={destino} to={destino} className="text-sm font-medium text-slate-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">{texto}</Link>)}
+            <Link to="/trabajaConNosotros" className="text-sm font-medium text-slate-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">Trabaja con nosotros</Link>
+            <button type="button" onClick={() => setModalOpen(true)} className="rounded-lg bg-white/15 px-4 py-2 text-sm font-semibold text-white hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white">Contacto</button>
           </div>
-        </div>
-      </nav>
-      {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-slate-900 z-40 shadow-md">
-          <ul className="flex flex-col items-center gap-4 p-4">
-            {["About", "Services", "Pricing", "Contact"].map((text) => (
-              <li key={text}>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-slate-300 rounded-sm"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {text}
-                </a>
-              </li>
-            ))}
-
-            <li>
-              <div className="relative inline-flex items-center group cursor-pointer">
-                <span className="absolute w-16 h-16 rounded-full bg-purple-600 opacity-0 blur-xl scale-100 transition duration-300 group-hover:opacity-40 group-hover:scale-110"></span>
-                <button
-                  type="button"
-                  onClick={() => setModalOpen(true)}
-                  className="relative z-10 bg-white/20 rounded-full text-white text-xl border-none p-2 font-semibold transition duration-300"
-                >
-                  <MdEmail />
-                </button>
-              </div>
-              <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/probablynotannie"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-flex items-center group cursor-pointer"
-              >
-                <span className="absolute w-16 h-16 rounded-full bg-red-600 opacity-0 blur-xl scale-100 transition duration-300 group-hover:opacity-40 group-hover:scale-110"></span>
-                <button
-                  type="button"
-                  className="relative z-10 bg-white/20 rounded-full text-white text-xl border-none p-2 font-semibold transition duration-300"
-                >
-                  <FaInstagram />
-                </button>
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
-    </header>
+          <div id="menu-movil" className={`${menuOpen ? "block" : "hidden"} absolute left-0 top-full w-full bg-slate-900 shadow-lg md:hidden`}>
+              <ul className="flex flex-col items-center gap-1 p-4">
+                {enlaces.map(([texto, destino]) => (
+                  <li key={destino}>
+                    <Link to={destino} className="block rounded px-4 py-3 text-slate-100 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white" onClick={() => setMenuOpen(false)}>{texto}</Link>
+                  </li>
+                ))}
+                <li><Link to="/trabajaConNosotros" className="block rounded px-4 py-3 text-slate-100 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white" onClick={() => setMenuOpen(false)}>Trabaja con nosotros</Link></li>
+                <li><button type="button" onClick={() => { setMenuOpen(false); setModalOpen(true); }} className="rounded-lg bg-white/15 px-4 py-3 font-semibold text-white hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white">Contacto</button></li>
+              </ul>
+          </div>
+        </nav>
+      </header>
+      <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />
+    </>
   );
 }
 

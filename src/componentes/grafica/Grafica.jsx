@@ -1,63 +1,15 @@
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-
 export default function Grafica() {
-  const data = [
-    { mes: "Ene", precio: 20.28, precioDescuento: 16.22 },
-    { mes: "Feb", precio: 13.67, precioDescuento: 10.94 },
-    { mes: "Mar", precio: 20.28, precioDescuento: 16.22 },
-    { mes: "Abr", precio: 13.67, precioDescuento: 10.94 },
-    { mes: "May", precio: 32.27, precioDescuento: 25.82 },
-    { mes: "Jun", precio: 32.27, precioDescuento: 25.82 },
-    { mes: "Jul", precio: 32.27, precioDescuento: 25.82 },
-    { mes: "Ago", precio: 32.27, precioDescuento: 25.82 },
-    { mes: "Sep", precio: 32.27, precioDescuento: 25.82 },
-    { mes: "Oct", precio: 32.27, precioDescuento: 25.82 },
-    { mes: "Nov", precio: 104.43, precioDescuento: 83.54 },
-    { mes: "Dic", precio: 111.23, precioDescuento: 88.98 },
-  ];
-
   return (
-    <div className="mx-auto p-4 my-10 bg-white shadow rounded">
-      <h2 className="text-xl font-semibold mb-4 text-center">
-        Precio medio de la luz 2024 (€/MWh)
-      </h2>
-
-      <div className="min-w-[40vw]">
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart
-            data={data}
-            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="mes" />
-            <YAxis />
-            <Tooltip formatter={(value) => `${value} €/MWh`} />
-            <Line
-              type="monotone"
-              dataKey="precio"
-              stroke="#3b82f6"
-              strokeWidth={3}
-              name="Precio normal"
-            />
-            <Line
-              type="monotone"
-              dataKey="precioDescuento"
-              stroke="#10b981"
-              strokeWidth={2}
-              strokeDasharray="5 5"
-              name="Precio con Volt"
-            />
-          </LineChart>
-        </ResponsiveContainer>
+    <section className="bg-white px-6 py-16" aria-labelledby="analisis-real-title">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-violet-100 bg-violet-50 p-8 text-center sm:p-12">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-violet-800">Un análisis adaptado a tu negocio</p>
+        <h2 id="analisis-real-title" className="text-3xl font-bold text-slate-900 sm:text-4xl">
+          Cada factura cuenta una historia distinta
+        </h2>
+        <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-slate-700">
+          El consumo y las condiciones varían de una empresa a otra. Por eso revisamos tu factura de luz o gas y te explicamos las alternativas disponibles para tu caso, sin recurrir a ahorros estimados o comparativas genéricas.
+        </p>
       </div>
-    </div>
+    </section>
   );
 }

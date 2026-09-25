@@ -3,16 +3,16 @@ export default function ComoFunciona() {
     {
       title: "1. Visita personalizada",
       description:
-        "Un experto analiza tu situación energética y recopila tu factura.",
+        "Revisamos tus facturas de electricidad y gas y entendemos cómo consume tu negocio.",
     },
     {
       title: "2. Comparamos tarifas",
-      description: "Buscamos la mejor oferta entre compañías confiables.",
+      description: "Comparamos alternativas de suministro que pueden encajar con tu empresa.",
     },
     {
       title: "3. Empiezas a ahorrar",
       description:
-        "Nos encargamos de todo el papeleo. Tú solo disfrutas del ahorro.",
+        "Te explicamos las condiciones y te acompañamos con la gestión si decides cambiar.",
     },
   ];
 
@@ -27,8 +27,7 @@ export default function ComoFunciona() {
           ¿Cómo funciona?
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto text-base mb-12">
-          Con nuestro proceso simple y transparente, cambiar a una tarifa mejor
-          es rápido y sin complicaciones.
+          Un proceso sencillo para entender tus contratos de luz y gas y valorar tus opciones con claridad.
         </p>
 
         <div className="grid md:grid-cols-3 gap-10 text-left">

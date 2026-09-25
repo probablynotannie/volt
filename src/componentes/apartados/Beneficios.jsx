@@ -12,8 +12,8 @@ export default function Beneficios() {
       imagen: "/cliente.webp",
     },
     {
-      titulo: "Ahorro garantizado",
-      descripcion: "Si no te ofrecemos algo mejor, no tienes que cambiar.",
+      titulo: "Decide con información",
+      descripcion: "Te explicamos las alternativas con claridad; cambiar solo tiene sentido si encaja contigo.",
       imagen:
         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
     },
@@ -35,7 +35,8 @@ export default function Beneficios() {
               <div className="relative">
                 <img
                   src={b.imagen}
-                  alt={b.titulo}
+                  alt=""
+                  aria-hidden="true"
                   loading="lazy"
                   className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />

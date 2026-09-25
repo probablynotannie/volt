@@ -40,6 +40,28 @@ export default function Contacto({ modalOpen, setModalOpen }) {
       );
   };
   useEffect(() => {
+    if (!modalOpen) return undefined;
+    const previouslyFocused = document.activeElement;
+    const closeButton = document.getElementById("contact-dialog-close");
+    closeButton?.focus();
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setModalOpen(false);
+      if (event.key === "Tab") {
+        const dialog = document.getElementById("contact-dialog");
+        const focusable = dialog?.querySelectorAll("button:not(:disabled), input:not(:disabled), textarea:not(:disabled), a[href]");
+        if (!focusable?.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
     if (modalOpen) {
       const scrollbarWidth =
         window.innerWidth - document.documentElement.clientWidth;
@@ -50,6 +72,8 @@ export default function Contacto({ modalOpen, setModalOpen }) {
       document.body.style.paddingRight = "";
     }
     return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      previouslyFocused?.focus?.();
       document.body.style.overflow = "";
       document.body.style.paddingRight = "";
     };
@@ -62,14 +86,17 @@ export default function Contacto({ modalOpen, setModalOpen }) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 py-6 sm:px-6 transition"
           aria-modal="true"
           role="dialog"
+          aria-labelledby="contact-dialog-title"
         >
-          <div className="bg-white w-full max-w-lg rounded-lg shadow-2xl animate-fadeInUp">
+          <div id="contact-dialog" className="bg-white w-full max-w-lg rounded-lg shadow-2xl animate-fadeInUp">
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 id="contact-dialog-title" className="text-lg font-semibold text-gray-800">
                 Contáctanos
               </h3>
               <button
+                type="button"
                 onClick={() => setModalOpen(false)}
+                id="contact-dialog-close"
                 className="text-gray-400 hover:text-gray-600 transition focus:outline-none"
                 aria-label="Cerrar modal"
               >
@@ -93,6 +120,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
                       id="user_name"
                       name="user_name"
                       type="text"
+                      autoComplete="name"
                       required
                       placeholder="Tu nombre"
                       className="w-full pl-10 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
@@ -115,6 +143,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
                       id="user_email"
                       name="user_email"
                       type="email"
+                      autoComplete="email"
                       required
                       placeholder="tu@email.com"
                       className="w-full pl-10 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
@@ -153,7 +182,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
             </div>
             <div className="px-6 py-4 border-t border-gray-200 flex justify-between items-center text-sm text-purple-700 font-medium">
               <a
-                href="tel:943219732"
+                href="tel:+34631694540"
                 className="flex items-center gap-2 hover:text-purple-900"
               >
                 <FaPhone />

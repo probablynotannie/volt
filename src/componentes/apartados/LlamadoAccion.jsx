@@ -10,14 +10,14 @@ export default function LlamadoAccion() {
           ¿Quieres ahorrar en tu factura?
         </h2>
         <p className="text-lg mb-8">
-          Nuestro equipo puede ayudarte a encontrar una mejor tarifa hoy mismo.
+          Revisamos tu situación y te explicamos las opciones disponibles para tu negocio.
         </p>
         <button
           type="button"
           onClick={() => setModalOpen(true)}
           className="bg-white text-primary font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
         >
-          Solicita una visita gratuita
+          Solicita una revisión sin coste
         </button>
       </section>
       <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />

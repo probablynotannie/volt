@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 export default function PartnersSection() {
   const empresas = [
     { nombre: "BASER", logo: "/empresas/baser.png" },
@@ -12,17 +10,13 @@ export default function PartnersSection() {
   return (
     <section className="py-20 bg-white" id="partners">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="sr-only">Empresas colaboradoras</h2>
-
+        <h2 className="mb-3 text-center text-xl font-semibold text-slate-800">Compañías del sector energético</h2>
+        <p className="mb-8 text-sm text-gray-600">Logotipos mostrados únicamente con fines informativos; no implican una colaboración o representación oficial.</p>
         <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-center">
-          {empresas.map((empresa, index) => (
-            <motion.li
-              key={index}
+          {empresas.map((empresa) => (
+            <li
+              key={empresa.nombre}
               className="flex items-center justify-center h-16 grayscale hover:grayscale-0 transition duration-300 list-none"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <img
                 src={empresa.logo}
@@ -30,7 +24,7 @@ export default function PartnersSection() {
                 className="max-h-24 object-contain"
                 loading="lazy"
               />
-            </motion.li>
+            </li>
           ))}
         </ul>
       </div>

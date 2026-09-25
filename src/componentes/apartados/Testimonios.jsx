@@ -1,88 +1,54 @@
-import { useEffect, useRef } from "react";
+import { FaFileInvoice, FaSearch, FaClipboardCheck } from "react-icons/fa";
+
+const pasos = [
+  {
+    icon: FaFileInvoice,
+    numero: "01",
+    titulo: "Revisamos tu factura",
+    texto: "Entendemos tu consumo y las condiciones de tu contrato actual.",
+  },
+  {
+    icon: FaSearch,
+    numero: "02",
+    titulo: "Comparamos opciones",
+    texto: "Buscamos alternativas del mercado que encajen con tu negocio.",
+  },
+  {
+    icon: FaClipboardCheck,
+    numero: "03",
+    titulo: "Tú decides con claridad",
+    texto: "Te explicamos las opciones y, si eliges cambiar, te acompañamos en el proceso.",
+  },
+];
 
 export default function Testimonios() {
-  const sliderRef = useRef(null);
-  const scrollPosition = useRef(0);
-
-  const clientes = [
-    {
-      persona: "Marta G., Dueña de Bar La Plaza (Madrid)",
-      texto:
-        "“Vinieron a mi bar, me explicaron todo con claridad y ahora ahorro más de 40€ al mes.”",
-    },
-    {
-      persona: "David S., Gerente de Gimnasio VitalFit",
-      texto:
-        "“No tenía tiempo para cambiar de compañía, pero ellos lo gestionaron todo. ¡Un 10!”",
-    },
-    {
-      persona: "Lucía R., Responsable de Oficina LegalConsult",
-      texto:
-        "“Antes pagábamos más de 800€/mes. Ahora hemos reducido la factura un 25% sin cambiar de proveedor.”",
-    },
-    {
-      persona: "Jorge M., CEO de Panadería Artesana Madrid",
-      texto:
-        "“El proceso fue rápido y totalmente personalizado. Nos sorprendió el ahorro.”",
-    },
-    {
-      persona: "Ana P., Administración de Clínica Dental SmilePro",
-      texto:
-        "“Gracias a ellos ahora tenemos más control sobre nuestro gasto energético. Muy recomendable.”",
-    },
-  ];
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    let animationFrameId;
-
-    const scroll = () => {
-      if (!slider) return;
-
-      scrollPosition.current += 0.8;
-      if (scrollPosition.current >= slider.scrollWidth / 2) {
-        scrollPosition.current = 0;
-      }
-
-      slider.scrollLeft = scrollPosition.current;
-      animationFrameId = requestAnimationFrame(scroll);
-    };
-
-    animationFrameId = requestAnimationFrame(scroll);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []);
-
   return (
-    <section className="bg-gray-100 py-20 overflow-hidden" id="testimonios">
-      <div className="mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-primary mb-4">
-          Empresas que ya confían en nosotros
-        </h2>
-        <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-          Conoce algunos de los negocios que ya están ahorrando cientos de euros
-          cada mes gracias a nuestras soluciones energéticas personalizadas.
-        </p>
-
-        <div
-          aria-label="Testimonios de clientes satisfechos"
-          className="flex gap-6 w-full overflow-x-hidden"
-          ref={sliderRef}
-        >
-          {[...clientes, ...clientes].map((cliente, index) => (
-            <div
-              key={index}
-              className="min-w-[320px] max-w-sm bg-white p-6 rounded-xl shadow-md flex-shrink-0"
-            >
-              <p className="text-gray-700 italic">"{cliente.texto}"</p>
-              <p className="mt-4 font-semibold text-primary">
-                {cliente.persona}
-              </p>
-            </div>
-          ))}
+    <section className="bg-slate-950 py-20 text-white" id="servicio">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-violet-300">
+            Un proceso claro, de principio a fin
+          </p>
+          <h2 className="text-3xl font-bold sm:text-4xl">Así te ayudamos</h2>
+          <p className="mt-4 leading-relaxed text-slate-300">
+            Analizamos tu situación y te presentamos opciones para que puedas decidir con toda la información.
+          </p>
         </div>
+
+        <ol className="grid gap-5 md:grid-cols-3">
+          {pasos.map(({ icon: Icon, numero, titulo, texto }) => (
+            <li key={numero} className="rounded-2xl border border-white/10 bg-white/[0.04] p-7 transition hover:-translate-y-1 hover:bg-white/[0.07]">
+              <div className="mb-7 flex items-center justify-between">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-400/15 text-xl text-violet-200">
+                  <Icon aria-hidden="true" />
+                </span>
+                <span className="text-sm font-semibold tracking-widest text-slate-500">{numero}</span>
+              </div>
+              <h3 className="text-xl font-semibold">{titulo}</h3>
+              <p className="mt-3 leading-relaxed text-slate-300">{texto}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
