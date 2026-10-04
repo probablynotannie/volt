@@ -8,36 +8,34 @@ export default function Contacto({ modalOpen, setModalOpen }) {
   const form = useRef();
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs
-      .sendForm("service_aulxgod", "template_2vydtus", form.current, {
-        publicKey: "_U3DyehQC12K6Hti7",
-      })
-      .then(
-        () => {
-          Swal.fire({
-            title: "Email enviado",
-            text: "Se ha enviado correctamente :)",
-            icon: "success",
-            timer: 2000,
-            timerProgressBar: true,
-          });
-          setLoading(false);
-          form.current.reset();
-          setModalOpen(false);
-        },
-        (error) => {
-          Swal.fire({
-            title: "Error",
-            text: "Hubo un error enviando el email, intenta nuevamente.",
-            icon: "error",
-          });
-          setLoading(false);
-          console.error("Error sending email:", error.text);
-        }
-      );
+    const templateParams = Object.fromEntries(new FormData(form.current).entries());
+
+    try {
+      await emailjs.send("service_iqlkcme", "template_2vydtus", templateParams, {
+        publicKey: "qTHCWzcSXpw5E6qO-",
+      });
+      await Swal.fire({
+        title: "Email enviado",
+        text: "Se ha enviado correctamente :)",
+        icon: "success",
+        timer: 2000,
+        timerProgressBar: true,
+      });
+      form.current.reset();
+      setModalOpen(false);
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un error enviando el email, intenta nuevamente.",
+        icon: "error",
+      });
+      console.error("Error sending email:", error?.text || error);
+    } finally {
+      setLoading(false);
+    }
   };
   useEffect(() => {
     if (!modalOpen) return undefined;

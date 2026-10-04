@@ -6,7 +6,6 @@ import Testimonios from "./apartados/Testimonios";
 import Contacto from "./estructura/Contacto";
 import "@fontsource/orbitron/800.css";
 import { FaArrowRight, FaLightbulb } from "react-icons/fa";
-import Grafica from "./grafica/Grafica";
 import Seo from "./estructura/Seo";
 import Empresas from "./apartados/Empresas";
 import RevisionYPreguntas from "./apartados/RevisionYPreguntas";
@@ -114,7 +113,6 @@ function Landing() {
       <ComoFunciona />
       <Beneficios />
       <RevisionYPreguntas />
-      <Grafica />
       <Testimonios />
       <Empresas />
       <LlamadoAccion />
