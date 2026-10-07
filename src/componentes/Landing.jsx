@@ -17,8 +17,8 @@ function Landing() {
   return (
     <>
       <Seo
-        title="Asesoramiento energético para empresas | Volt Energía"
-        description="Revisamos facturas de electricidad y gas para empresas, comparamos alternativas y te acompañamos si decides cambiar. Sin coste ni compromiso."
+        title="Volt Energía | Asesoría energética para empresas"
+        description="Asesoría energética para empresas: revisamos tus facturas de luz y gas, comparamos tarifas y te acompañamos si decides cambiar. Sin coste ni compromiso."
         canonical="https://volt-green.vercel.app/"
       />
       <main id="main-content" className="relative">

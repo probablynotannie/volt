@@ -28,6 +28,9 @@ function Footer() {
                 Trabaja con nosotros
               </Link>
             </li>
+            <li><Link to="/aviso-legal" className="hover:underline">Aviso legal</Link></li>
+            <li><Link to="/privacidad" className="hover:underline">Política de privacidad</Link></li>
+            <li><Link to="/cookies" className="hover:underline">Política de cookies</Link></li>
           </ul>
         </div>
         <div>

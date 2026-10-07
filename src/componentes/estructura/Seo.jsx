@@ -20,6 +20,8 @@ export default function Seo({ title, description, canonical, type = "website" })
     setMeta("property", "og:type", type);
     setMeta("property", "og:url", canonical);
     setMeta("property", "og:locale", "es_ES");
+    setMeta("property", "og:site_name", "Volt Energía");
+    setMeta("name", "twitter:card", "summary");
 
     let canonicalLink = document.head.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {

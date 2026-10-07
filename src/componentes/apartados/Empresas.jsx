@@ -5,6 +5,10 @@ export default function PartnersSection() {
     { nombre: "Repsol Luz", logo: "/empresas/repsol.jpg" },
     { nombre: "Iberdrola Empresas", logo: "/empresas/iberdrola.png" },
     { nombre: "TotalEnergies", logo: "/empresas/totalEnergies.webp" },
+    { nombre: "Alumbra", logo: "/empresas/alumbra.png" },
+    { nombre: "Nexus", logo: "/empresas/nexus.png" },
+    { nombre: "Plenitude", logo: "/empresas/plenitude.png" },
+    { nombre: "Quimera", logo: "/empresas/quimera.png" },
   ];
 
   return (

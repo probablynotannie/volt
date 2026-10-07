@@ -4,6 +4,9 @@ import Header from "./estructura/Header";
 import Footer from "./estructura/Footer";
 import Landing from "./Landing";
 import Ofertas from "./trabajaConNosotros/Ofertas";
+import AvisoLegal from "./legales/AvisoLegal";
+import PoliticaPrivacidad from "./legales/PoliticaPrivacidad";
+import PoliticaCookies from "./legales/PoliticaCookies";
 
 function ScrollToAnchor() {
   const { pathname, hash } = useLocation();
@@ -29,6 +32,9 @@ function Rutas() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/trabajaConNosotros" element={<Ofertas />} />
+          <Route path="/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/cookies" element={<PoliticaCookies />} />
         </Routes>
         <Footer />
       </Router>

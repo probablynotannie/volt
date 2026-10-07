@@ -3,6 +3,7 @@ import { FaTimes, FaPhone, FaEnvelope, FaUser } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { MdEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function Contacto({ modalOpen, setModalOpen }) {
   const form = useRef();
@@ -165,6 +166,10 @@ export default function Contacto({ modalOpen, setModalOpen }) {
                     className="w-full mt-1 rounded-lg border border-gray-300 px-4 py-2 text-sm shadow-sm resize-none focus:border-purple-500 focus:ring-2 focus:ring-purple-400"
                   />
                 </div>
+                <p className="text-xs leading-relaxed text-gray-600">
+                  Responsable: <strong>GT 2018 Energy Solutions SL (NIF B09836016)</strong>. Usaremos tus datos para responder a tu consulta; el envío se gestiona mediante EmailJS. Puedes ejercer tus derechos y consultar el resto de información en la{" "}
+                  <Link to="/privacidad" className="font-medium text-purple-700 underline" onClick={() => setModalOpen(false)}>Política de privacidad</Link>.
+                </p>
                 <button
                   type="submit"
                   disabled={loading}
