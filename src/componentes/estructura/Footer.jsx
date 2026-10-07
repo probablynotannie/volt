@@ -33,8 +33,8 @@ function Footer() {
         <div>
           <h2 className="font-semibold text-white">Contacto</h2>
 
-          <p className="text-sm mt-2">Correo: <a className="underline hover:text-white" href="mailto:voltenergia@voltenergia.com">voltenergia@voltenergia.com</a></p>
-          <p className="text-sm">Teléfono: <a className="underline hover:text-white" href="tel:+34631694540">+34 631 69 45 40</a></p>
+          <p className="text-sm mt-2">Correo: <a className="underline hover:text-white" href="mailto:administracion@voltenergia.es">administracion@voltenergia.es</a></p>
+          <p className="text-sm">Teléfono: <a className="underline hover:text-white" href="tel:+34697113639">+34 697 11 36 39</a></p>
         </div>
       </div>
       <div className="text-center text-xs mt-6 text-gray-400">

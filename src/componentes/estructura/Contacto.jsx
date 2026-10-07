@@ -180,11 +180,11 @@ export default function Contacto({ modalOpen, setModalOpen }) {
             </div>
             <div className="px-6 py-4 border-t border-gray-200 flex justify-between items-center text-sm text-purple-700 font-medium">
               <a
-                href="tel:+34631694540"
+                href="tel:+34697113639"
                 className="flex items-center gap-2 hover:text-purple-900"
               >
                 <FaPhone />
-               +34 631 69 45 40
+               +34 697 11 36 39
               </a>
               <span className="text-gray-500 select-none">
                 © {new Date().getFullYear()} VOLT

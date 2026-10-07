@@ -39,7 +39,7 @@ function Ofertas() {
             encantará conocerte.
           </p>
           <a
-            href="mailto:voltenergia@voltenergia.com?subject=Candidatura%20espont%C3%A1nea%20-%20Volt%20Energ%C3%ADa"
+            href="mailto:administracion@administracion.es?subject=Candidatura%20espont%C3%A1nea%20-%20Volt%20Energ%C3%ADa"
             className="mt-9 inline-flex items-center gap-3 rounded-lg bg-white px-6 py-3.5 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-violet-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-violet-950"
           >
             Enviar candidatura <FaArrowRight aria-hidden="true" />
@@ -67,7 +67,7 @@ function Ofertas() {
               ))}
             </div>
             <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-slate-500">
-              Para presentarte, escribe a <a className="font-medium text-violet-800 underline" href="mailto:voltenergia@voltenergia.com">voltenergia@voltenergia.com</a> con tu CV y unas líneas sobre el área que te interesa. No envíes información sensible que no sea necesaria para tu candidatura.
+              Para presentarte, escribe a <a className="font-medium text-violet-800 underline" href="mailto:administracion@administracion.es">administracion@administracion.es</a> con tu CV y unas líneas sobre el área que te interesa. No envíes información sensible que no sea necesaria para tu candidatura.
             </p>
           </div>
         </section>
